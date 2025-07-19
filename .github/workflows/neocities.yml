@@ -29,6 +29,11 @@ jobs:
       run: |
         npm i
         npm run build
+
+    #debug
+    - name: Debug build output
+      run: ls -R
+      
     # When the dist_dir is ready, deploy it to neocities
     # Here we deploy the folder named `public`
     - name: Deploy to neocities
@@ -38,4 +43,4 @@ jobs:
         cleanup: false
         neocities_supporter: false # set this to true if you have a supporter account and want to bypass unsuported files filter.
         preview_before_deploy: true # print a deployment plan prior to waiting for files to upload.
-        dist_dir: public
+        dist_dir: website
